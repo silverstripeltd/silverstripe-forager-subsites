@@ -1,0 +1,19 @@
+{
+    "name": "silverstripe/silverstripe-forager-subsites",
+    "description": "Add support for Silverstripe Subsites to silverstripe/silverstripe-forager",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/silverstripeltd/silverstripe-forager-subsites",
+    "authors": [],
+    "keywords": [
+        "Silverstripe",
+        "Silverstripe CMS",
+        "Search",
+        "Subsites"
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
