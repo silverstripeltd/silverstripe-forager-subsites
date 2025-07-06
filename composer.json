@@ -13,13 +13,12 @@
     ],
     "require": {
         "php": "^8.3",
-        "silverstripe/silverstripe-forager": "dev-feature/v2-silverstripe-6 as 2.0.0",
-        "silverstripe/subsites": "^4"
+        "silverstripe/cms": "^6",
+        "symbiote/silverstripe-queuedjobs": "^6"
     },
     "require-dev": {
         "silverstripe/recipe-cms": "^6",
-        "phpunit/phpunit": "^11.3",
-        "slevomat/coding-standard": "^8.8"
+        "silverstripe/recipe-testing": "^4"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
