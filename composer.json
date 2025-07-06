@@ -12,8 +12,33 @@
         "Subsites"
     ],
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "silverstripe/silverstripe-forager": "dev-feature/v2-silverstripe-6 as 2.0.0",
+        "silverstripe/subsites": "^4"
+    },
+    "require-dev": {
+        "silverstripe/recipe-cms": "^6",
+        "phpunit/phpunit": "^11.3",
+        "slevomat/coding-standard": "^8.8"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "SilverStripe\\ForagerSubsites\\": "src/",
+            "SilverStripe\\ForagerSubsites\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "php-http/discovery": true,
+            "silverstripe/vendor-plugin": true,
+            "silverstripe/recipe-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=phpcs.xml --extensions=php --encoding=utf-8"
+    }
 }
