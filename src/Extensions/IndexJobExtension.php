@@ -10,6 +10,25 @@ class IndexJobExtension extends Extension
 
     private ?bool $stashValue = null;
 
+    public function onBeforeSetup(): void
+    {
+        if ($this->stashValue === null) {
+            $this->stashValue = Subsite::$disable_subsite_filter;
+        }
+
+        Subsite::disable_subsite_filter(true);
+    }
+
+    public function onAfterSetup(): void
+    {
+        if ($this->stashValue === null) {
+            return;
+        }
+
+        Subsite::disable_subsite_filter($this->stashValue);
+        $this->stashValue = null;
+    }
+
     public function onBeforeProcess(): void
     {
         if ($this->stashValue === null) {
@@ -21,10 +40,12 @@ class IndexJobExtension extends Extension
 
     public function onAfterProcess(): void
     {
-        if ($this->stashValue !== null) {
-            Subsite::disable_subsite_filter($this->stashValue);
-            $this->stashValue = null;
+        if ($this->stashValue === null) {
+            return;
         }
+        
+        Subsite::disable_subsite_filter($this->stashValue);
+        $this->stashValue = null;
     }
 
 }
