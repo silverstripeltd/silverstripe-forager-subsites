@@ -20,7 +20,7 @@ class IndexConfigurationExtension extends Extension
         if (!$doc->getDataObject()->hasField('SubsiteID')) {
             $this->updateDocumentWithoutSubsite($doc, $indexes);
         } else {
-            $this->updateDocumentWithSubsite($indexes, (int)$doc->getDataObject()->SubsiteID);
+            $this->updateDocumentWithSubsite($indexes, (int) $doc->getDataObject()->SubsiteID);
         }
     }
 
@@ -47,9 +47,11 @@ class IndexConfigurationExtension extends Extension
         foreach ($indexes as $indexName => $data) {
             $subsiteId = $data['subsite_id'] ?? 'all';
 
-            if ($subsiteId !== 'all' && $docSubsiteId !== (int)$subsiteId) {
-                unset($indexes[$indexName]);
+            if ($subsiteId === 'all' || $docSubsiteId === (int) $subsiteId) {
+                continue;
             }
+
+            unset($indexes[$indexName]);
         }
     }
 
