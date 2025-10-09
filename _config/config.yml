@@ -5,7 +5,7 @@ After: '#silverstripe-forager'
 SilverStripe\Forager\Service\IndexConfiguration:
   extensions:
     - SilverStripe\ForagerSubsites\Extensions\IndexConfigurationExtension
-SilverStripe\Forager\Admin\SearchAdmin:
+SilverStripe\Forager\Admin\SearchIndexAdmin:
   extensions:
     - SilverStripe\ForagerSubsites\Extensions\SearchAdminExtension
 SilverStripe\Forager\Jobs\ReindexJob:

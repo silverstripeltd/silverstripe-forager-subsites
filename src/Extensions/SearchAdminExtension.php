@@ -7,14 +7,16 @@ use SilverStripe\Model\List\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\DataQuery;
 use SilverStripe\Subsites\Model\Subsite;
+use SilverStripe\Forager\Service\IndexData;
 
 class SearchAdminExtension extends Extension
 {
 
     private ?bool $stashValue = null;
 
-    public function updateQuery(DataQuery $query, array $data): void
+    public function updateQuery(DataQuery $query, IndexData $index): void
     {
+        $data = $index->getData();
         if (!isset($data['subsite_id']) || !is_numeric($data['subsite_id'])) {
             return;
         }

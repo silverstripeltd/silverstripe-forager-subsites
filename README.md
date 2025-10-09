@@ -26,7 +26,7 @@ SilverStripe\Forager\Service\IndexConfiguration:
       includeClasses:
         Page:
           <<: *page_defaults
-          My\Other\Class:
+        My\Other\Class:
           <<: *other_class_defaults
 
 ```
@@ -37,5 +37,5 @@ same configuration across.
 __Additional note__:
 > In the sample above, if the data object (My\Other\Class) does not have a subsite ID,  then it will be included in the indexing as it is explicitly defined in the index configuration
 
-This is handled via `SubsiteIndexConfigurationExtension` - this logic could be
+This is handled via `IndexConfigurationExtension` - this logic could be
 replicated for other scenarios like languages if required.

@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "silverstripe/silverstripe-forager": "dev-feature/v2-silverstripe-6 as 2.0.0",
+        "silverstripe/silverstripe-forager": "dev-feature/AOS-310-cms6-subsites as 2.0.x-dev",
         "silverstripe/subsites": "^4"
     },
     "require-dev": {
