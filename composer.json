@@ -13,11 +13,11 @@
     ],
     "require": {
         "php": "^8.3",
+        "silverstripe/recipe-cms": "^6",
         "silverstripe/silverstripe-forager": "dev-feature/AOS-310-cms6-subsites as 2.0.x-dev",
         "silverstripe/subsites": "^4"
     },
     "require-dev": {
-        "silverstripe/recipe-cms": "^6",
         "phpunit/phpunit": "^11.3",
         "slevomat/coding-standard": "^8.8"
     },

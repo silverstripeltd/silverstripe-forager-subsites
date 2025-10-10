@@ -1,0 +1,13 @@
+SilverStripe\Subsites\Model\Subsite:
+  subsite1:
+    Title: 'Subsite 1'
+
+SilverStripe\ForagerSubsites\Tests\Fake\SubsiteDataObjectFake:
+  one:
+    Title: Subsite Dataobject one - Subsite 1
+    Subsite: =>SilverStripe\Subsites\Model\Subsite.subsite1
+    ShowInSearch: 1
+  two:
+    Title: Subsite Dataobject two - Main Site
+    SubsiteID: 0
+    ShowInSearch: 1
