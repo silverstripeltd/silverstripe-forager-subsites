@@ -51,7 +51,7 @@ class SearchAdminExtensionTest extends SapphireTest
 
                         $this->assertEquals(2, $query->count());
 
-                        $formExtension->updateQuery($query, $index);
+                        $formExtension->updateQuery($query, $index, $class);
                         $this->assertEquals(1, $query->count());
                     }
                 }

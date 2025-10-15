@@ -14,7 +14,7 @@ class SearchAdminExtension extends Extension
 
     private ?bool $stashValue = null;
 
-    public function updateQuery(DataQuery $query, IndexData $index): void
+    public function updateQuery(DataQuery $query, IndexData $index, string $class = ''): void
     {
         $data = $index->getData();
         if (!isset($data['subsite_id']) || !is_numeric($data['subsite_id'])) {
@@ -28,7 +28,7 @@ class SearchAdminExtension extends Extension
         Subsite::disable_subsite_filter(true);
 
         // If the DataObject has a Subsite relation, then apply a SubsiteID filter
-        if (!DataObject::getSchema()->hasOneComponent(Subsite::class, 'Subsite')) {
+        if (!$class || !DataObject::getSchema()->hasOneComponent($class, 'Subsite')) {
             return;
         }
 
