@@ -10,9 +10,6 @@ use SilverStripe\Forager\Interfaces\IndexingInterface;
 use SilverStripe\Forager\Service\IndexConfiguration;
 use SilverStripe\Forager\Tests\Fake\IndexConfigurationFake;
 use SilverStripe\ForagerSubsites\Tests\Fake\SubsiteDataObjectFake;
-//use SilverStripe\Forager\Tests\Fake\DataObjectFakeAlternate;
-//use SilverStripe\Forager\Tests\Fake\DataObjectSubclassFakeShouldNotIndex;
-//use SilverStripe\Forager\Tests\Fake\IndexConfigurationFake;
 use SilverStripe\Forager\Tests\Fake\ServiceFake;
 
 trait SearchServiceTestTrait
