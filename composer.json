@@ -14,7 +14,7 @@
     "require": {
         "php": "^8.3",
         "silverstripe/recipe-cms": "^6",
-        "silverstripe/silverstripe-forager": "dev-feature/AOS-310-cms6-subsites as 2.0.x-dev",
+        "silverstripe/silverstripe-forager": "2.0.x-dev",
         "silverstripe/subsites": "^4"
     },
     "require-dev": {
