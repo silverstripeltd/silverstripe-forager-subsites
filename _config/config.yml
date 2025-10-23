@@ -11,9 +11,17 @@ SilverStripe\Forager\Service\IndexConfiguration:
 SilverStripe\Forager\Admin\SearchIndexAdmin:
   extensions:
     SubsiteSearchAdminExtension: SilverStripe\ForagerSubsites\Extensions\SearchAdminExtension
-SilverStripe\Forager\Jobs\ReindexJob:
+SilverStripe\Forager\Service\IndexData:
   extensions:
-    SubsiteIndexJobExtension: SilverStripe\ForagerSubsites\Extensions\IndexJobExtension
-SilverStripe\Forager\Jobs\IndexJob:
-  extensions:
-    SubsiteIndexJobExtension: SilverStripe\ForagerSubsites\Extensions\IndexJobExtension
+    SubsiteIndexDataExtension: SilverStripe\ForagerSubsites\Extensions\IndexDataExtension
+
+---
+Name: forager-subsite-context
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forager\Service\IndexData:
+    properties:
+      contexts:
+        subsite:
+          SilverstripeForagerLiveIndexDataContext: '%$SilverStripe\Forager\Service\LiveIndexDataContext'
+          SilverstripeForagerSubsiteIndexDataContext: '%$SilverStripe\ForagerSubsites\Service\SubsiteIndexDataContext'

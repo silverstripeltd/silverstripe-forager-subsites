@@ -9,6 +9,7 @@ SilverStripe\Forager\Service\IndexConfiguration:
   indexes:
     content-subsite0:
       subsite_id: 0
+      context: subsite
       includeClasses:
         Page: &page_defaults
           fields:
@@ -23,6 +24,7 @@ SilverStripe\Forager\Service\IndexConfiguration:
               property: Summary
     content-subsite4:
       subsite_id: 4 # or you can use environment variable such as 'NAME_OF_ENVIRONMENT_VARIABLE'
+      context: subsite
       includeClasses:
         Page:
           <<: *page_defaults

@@ -4,15 +4,11 @@ namespace SilverStripe\ForagerSubsites\Extensions;
 
 use SilverStripe\Core\Extension;
 use SilverStripe\Forager\Service\IndexData;
-use SilverStripe\Model\List\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\DataQuery;
-use SilverStripe\Subsites\Model\Subsite;
 
 class SearchAdminExtension extends Extension
 {
-
-    private ?bool $stashValue = null;
 
     public function updateQuery(DataQuery $query, IndexData $index, string $class = ''): void
     {
@@ -22,28 +18,12 @@ class SearchAdminExtension extends Extension
             return;
         }
 
-        if ($this->stashValue === null) {
-            $this->stashValue = Subsite::$disable_subsite_filter;
-        }
-
-        Subsite::disable_subsite_filter(true);
-
         // If the DataObject has a Subsite relation, then apply a SubsiteID filter
         if (!$class || !DataObject::getSchema()->hasOneComponent($class, 'Subsite')) {
             return;
         }
 
         $query->where(sprintf('SubsiteID IS NULL OR SubsiteID = %d', $data['subsite_id']));
-    }
-
-    public function updateDocumentList(ArrayList $list): void
-    {
-        if ($this->stashValue === null) {
-            return;
-        }
-
-        Subsite::disable_subsite_filter($this->stashValue);
-        $this->stashValue = null;
     }
 
 }

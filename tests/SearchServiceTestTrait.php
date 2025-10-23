@@ -33,6 +33,7 @@ trait SearchServiceTestTrait
                 [
                     'index1' => [
                         'subsite_id' => 0,
+                        'context' => 'subsite',
                         'includeClasses' => [
                             SubsiteDataObjectFake::class => [
                                 'batch_size' => 75,
@@ -45,6 +46,7 @@ trait SearchServiceTestTrait
                     ],
                     'index2' => [
                         'subsite_id' => 1,
+                        'context' => 'subsite',
                         'includeClasses' => [
                             SubsiteDataObjectFake::class => [
                                 'batch_size' => 25,

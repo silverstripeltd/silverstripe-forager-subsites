@@ -79,4 +79,5 @@ class SubsiteSearchServiceExtensionTest extends SapphireTest
         $searchExtension->updateRemoveFromIndexes($indexSuffixes, $doc2);
         $this->assertEquals(['index2'], $indexSuffixes, 'We should only keep index1 for Main site index');
     }
+
 }
