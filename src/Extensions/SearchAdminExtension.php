@@ -14,7 +14,9 @@ class SearchAdminExtension extends Extension
     {
         $data = $index->getData();
 
-        if (!isset($data['subsite_id']) || !is_numeric($data['subsite_id'])) {
+        if (!isset($data[IndexDataExtension::INDEX_SUBSITE_PROP])
+            || !is_numeric($data[IndexDataExtension::INDEX_SUBSITE_PROP])
+        ) {
             return;
         }
 
@@ -23,7 +25,7 @@ class SearchAdminExtension extends Extension
             return;
         }
 
-        $query->where(sprintf('SubsiteID IS NULL OR SubsiteID = %d', $data['subsite_id']));
+        $query->where(sprintf('SubsiteID IS NULL OR SubsiteID = %d', $data[IndexDataExtension::INDEX_SUBSITE_PROP]));
     }
 
 }

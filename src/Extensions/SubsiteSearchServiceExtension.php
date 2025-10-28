@@ -56,7 +56,7 @@ class SubsiteSearchServiceExtension extends Extension
 
         // Find which indexes are setup for this subsite
         foreach ($indexConfigurations as $indexSuffix => $indexConfiguration) {
-            $subsiteId = $indexConfiguration['subsite_id'] ?? 'all';
+            $subsiteId = $indexConfiguration[IndexDataExtension::INDEX_SUBSITE_PROP] ?? 'all';
 
             if ($subsiteId !== 'all' && $docSubsiteId !== (int) $subsiteId) {
                 continue;

@@ -45,7 +45,7 @@ class IndexConfigurationExtension extends Extension
     protected function updateDocumentWithSubsite(array &$indexes, int $docSubsiteId): void
     {
         foreach ($indexes as $indexName => $data) {
-            $subsiteId = $data['subsite_id'] ?? 'all';
+            $subsiteId = $data[IndexDataExtension::INDEX_SUBSITE_PROP] ?? 'all';
 
             if ($subsiteId === 'all' || $docSubsiteId === (int) $subsiteId) {
                 continue;
