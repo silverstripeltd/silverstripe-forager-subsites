@@ -1,0 +1,27 @@
+---
+Name: 'silverstripe-forager-subsites'
+After: '#silverstripe-forager'
+---
+SilverStripe\Forager\Extensions\SearchServiceExtension:
+  extensions:
+    SubsiteSearchServiceExtension: SilverStripe\ForagerSubsites\Extensions\SubsiteSearchServiceExtension
+SilverStripe\Forager\Service\IndexConfiguration:
+  extensions:
+    SubsiteIndexConfigurationExtension: SilverStripe\ForagerSubsites\Extensions\IndexConfigurationExtension
+SilverStripe\Forager\Admin\SearchIndexAdmin:
+  extensions:
+    SubsiteSearchAdminExtension: SilverStripe\ForagerSubsites\Extensions\SearchAdminExtension
+SilverStripe\Forager\Service\IndexData:
+  extensions:
+    SubsiteIndexDataExtension: SilverStripe\ForagerSubsites\Extensions\IndexDataExtension
+
+---
+Name: forager-subsite-context
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forager\Service\IndexData:
+    properties:
+      contexts:
+        subsite:
+          SilverstripeForagerLiveIndexDataContext: '%$SilverStripe\Forager\Service\LiveIndexDataContext'
+          SilverstripeForagerSubsiteIndexDataContext: '%$SilverStripe\ForagerSubsites\Service\SubsiteIndexDataContext'
